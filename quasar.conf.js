@@ -45,7 +45,8 @@ module.exports = function (ctx) {
         'QList',
         'QItem',
         'QItemSection',
-        'QItemLabel'
+        'QItemLabel',
+        'QSpinner'
       ],
 
       directives: [
@@ -54,6 +55,7 @@ module.exports = function (ctx) {
 
       // Quasar plugins
       plugins: [
+        'Loading',
         'Notify'
       ]
     },
@@ -62,7 +64,7 @@ module.exports = function (ctx) {
 
     build: {
       scopeHoisting: true,
-      // vueRouterMode: 'history',
+      vueRouterMode: 'history',
       // vueCompiler: true,
       // gzip: true,
       // analyze: true,
