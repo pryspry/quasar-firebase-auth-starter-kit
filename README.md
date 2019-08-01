@@ -1,26 +1,32 @@
-# Quasar App (quasar-firebase-auth-starter-kit)
+# Quasar App With Firebase Auth Starter Kit
 
-Quasar Firebase Auth Starter Kit
+Quasar App with Firebase Authentication.
 
-## Install the dependencies
+## Installation
+
+### Install The Dependencies
+
 ```bash
 npm install
 ```
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
+### Upgrade Quasar Packages
+
 ```bash
-quasar dev
+quasar upgrade
 ```
 
-### Lint the files
-```bash
-npm run lint
-```
+### Set Up Firebase Console
 
-### Build the app for production
-```bash
-quasar build
-```
+Go to [firebase console]([https://console.firebase.google.com/]).
 
-### Customize the configuration
-See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
+- Create new Firebase project
+- Copy firebaseconfig from Firebase console, add `export default firebaseConfig` and save as `firebase.config.js`.
+- Enables Firebase auth
+
+[Firebase Documentation](https://firebase.google.com/docs/web/setup). <br>
+[Firebase Auth Documentation](https://firebase.google.com/docs/auth).
+
+## Usage
+
+- TBD
