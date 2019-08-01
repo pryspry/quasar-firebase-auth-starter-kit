@@ -1,4 +1,6 @@
 
+import { auth } from './middlewares'
+
 const routes = [
   {
     path: '/',
@@ -18,7 +20,11 @@ const routes = [
     path: '/dashboard',
     component: () => import('layouts/MyLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/Dashboard.vue') }
+      {
+        path: '',
+        component: () => import('pages/Dashboard.vue'),
+        meta: { middlewares: [ auth ] }
+      }
     ]
   },
   {
