@@ -16,7 +16,6 @@
 import { Loading } from 'quasar'
 import auth from 'src/firebase/auth'
 export default {
-  name: 'LoginPage',
   computed: {
     user () { return this.$store.getters['auth/user'] }
   },
