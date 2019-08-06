@@ -5,7 +5,7 @@ const signOut = async () => {
   console.info('[Firebase] Sign out.')
   await firebase.auth().signOut().then(() => {
     Store().dispatch('auth/load')
-    window.location.replace('/login')
+    window.location.replace('/signin')
     // TODO show logout successful message
   }).catch(err => console.error(err))
 }
