@@ -29,8 +29,7 @@ export default {
     })
   },
   mounted () {
-    if (this.user) this.$router.push('/dashboard')
-    else auth.start()
+    auth.start()
   }
 }
 </script>
