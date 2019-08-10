@@ -5,11 +5,10 @@
 </template>
 
 <script>
-import auth from 'src/firebase/auth'
 export default {
   created () {
     // This page is used simulate sign out. It can be removed.
-    auth.signOut()
+    this.$auth.signOut()
   }
 }
 </script>

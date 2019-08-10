@@ -14,7 +14,6 @@
 
 <script>
 import { Loading } from 'quasar'
-import auth from 'src/firebase/auth'
 export default {
   computed: {
     user () { return this.$store.getters['auth/user'] }
@@ -24,12 +23,12 @@ export default {
   },
   created () {
     Loading.show({ message: 'Checking for user...' })
-    this.$store.dispatch('auth/load').then(user => {
+    this.$store.dispatch('auth/load', this).then(user => {
       Loading.hide()
     })
   },
   mounted () {
-    auth.start()
+    this.$auth.start()
   }
 }
 </script>

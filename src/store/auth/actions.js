@@ -1,6 +1,5 @@
-import firebase from 'src/firebase'
-
-export async function load ({ commit }) {
+export async function load ({ commit }, app) {
+  let firebase = app.$firebase
   console.info('[store] auth/load')
   return new Promise((resolve, reject) => {
     firebase.auth().onAuthStateChanged(async user => {
