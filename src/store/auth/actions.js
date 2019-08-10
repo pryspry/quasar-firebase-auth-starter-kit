@@ -1,6 +1,6 @@
-export async function load ({ commit }, app) {
+export async function fetch ({ commit }, app) {
   let firebase = app.$firebase
-  console.info('[store] auth/load')
+  console.info('[store] auth/fetch')
   return new Promise((resolve, reject) => {
     firebase.auth().onAuthStateChanged(async user => {
       console.info('[Firebase] Auth state changed.')

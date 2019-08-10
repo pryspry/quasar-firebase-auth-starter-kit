@@ -15,7 +15,7 @@ export default async ({ Vue, store, app }) => {
     signOut: async () => {
       console.info('[Firebase] Sign out.')
       await app.firebase.auth().signOut().then(() => {
-        store.dispatch('auth/load')
+        store.dispatch('auth/fetch')
         window.location.replace('/signin')
         // TODO show logout successful message
       }).catch(err => console.error(err))
