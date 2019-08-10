@@ -8,9 +8,15 @@ export async function fetch ({ commit }, app) {
         let payload = {
           id: user.uid,
           name: user.displayName,
-          email: user.email,
           avatar: user.photoURL,
-          token: await user.getIdToken()
+          email: user.email,
+          emailVerified: user.emailVerified,
+          phoneNumber: user.phoneNumber,
+          token: await user.getIdToken(),
+          refreshToken: user.refreshToken,
+          providerId: user.providerId,
+          metadata: user.metadata,
+          isAnonymous: user.isAnonymous
         }
         commit('setUser', payload)
         console.info('[Firebase] User found.')
