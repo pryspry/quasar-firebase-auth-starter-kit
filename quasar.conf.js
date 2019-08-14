@@ -9,7 +9,8 @@ module.exports = function (ctx) {
       'i18n',
       'axios',
       'firebase',
-      'auth'
+      'auth',
+      'middleware-pipeline'
     ],
 
     css: [
