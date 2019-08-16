@@ -1,5 +1,6 @@
-export async function fetch ({ commit }, app) {
-  let firebase = app.$firebase
+import Vue from 'vue'
+export async function fetch ({ commit }) {
+  const firebase = Vue.prototype.$firebase
   console.info('[store] auth/fetch')
   return new Promise((resolve, reject) => {
     firebase.auth().onAuthStateChanged(async user => {

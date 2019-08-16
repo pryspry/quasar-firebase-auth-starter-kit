@@ -23,7 +23,7 @@ export default {
   },
   created () {
     Loading.show({ message: 'Checking for user...' })
-    this.$store.dispatch('auth/fetch', this).then(user => {
+    this.$store.dispatch('auth/fetch').then(user => {
       Loading.hide()
     })
   },
