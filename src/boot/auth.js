@@ -11,12 +11,12 @@ export default async ({ Vue, store }) => {
       ui.start(uiContainer, uiConfig({ firebase: firebase }))
     },
     user: () => {
-      return store.getters['auth/user']
+      return firebase.auth().currentUser
     },
     signOut: async () => {
       console.info('[Firebase] Sign out.')
       await firebase.auth().signOut().then(() => {
-        store.dispatch('auth/fetch')
+        store.dispatch('user/fetch')
         window.location.replace('/signin')
         // TODO show logout successful message
       }).catch(err => console.error(err))

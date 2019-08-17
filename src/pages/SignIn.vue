@@ -16,14 +16,14 @@
 import { Loading } from 'quasar'
 export default {
   computed: {
-    user () { return this.$store.getters['auth/user'] }
+    authenticated () { return this.$store.getters['user/authenticated'] }
   },
   watch: {
-    user () { if (this.user) this.$router.push('/dashboard') }
+    authenticated () { if (this.authenticated) this.$router.push('/dashboard') }
   },
   created () {
     Loading.show({ message: 'Checking for user...' })
-    this.$store.dispatch('auth/fetch').then(user => {
+    this.$store.dispatch('user/fetch').then(() => {
       Loading.hide()
     })
   },
