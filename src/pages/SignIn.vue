@@ -28,7 +28,7 @@ export default {
     })
   },
   mounted () {
-    this.$auth.start()
+    this.$auth.displaySignIn()
   }
 }
 </script>

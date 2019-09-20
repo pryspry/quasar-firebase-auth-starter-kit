@@ -1,14 +1,9 @@
 /**
- * FirebaseUI container id.
- * @returns Firebase UI auth container id string
- */
-export const container = '#firebaseui-auth-container'
-/**
  * FirebaseUI configurations.
  * @returns firebase ui configuration object
  * @link https://firebase.google.com/docs/auth/web/firebaseui
  */
-export const config = ({ firebase }) => ({
+export default ({ firebase }) => ({
   callbacks: {
     signInSuccessWithAuthResult: function (authResult, redirectUrl) {
       // Return type determines whether we continue the redirect automatically

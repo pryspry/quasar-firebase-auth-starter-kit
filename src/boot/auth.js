@@ -1,14 +1,14 @@
 import '../../node_modules/firebaseui/dist/firebaseui.css'
 import * as firebaseui from 'firebaseui'
-import { container as uiContainer, config as uiConfig } from '../config/firebaseui'
+import config from '../config/firebaseui'
 
 export default async ({ Vue, store }) => {
   const firebase = Vue.prototype.$firebase
   const ui = new firebaseui.auth.AuthUI(firebase.auth())
   const auth = {
-    start: () => {
+    displaySignIn: (container = '#firebaseui-auth-container') => {
       console.info('[Firebase] UI start.')
-      ui.start(uiContainer, uiConfig({ firebase: firebase }))
+      ui.start(container, config({ firebase: firebase }))
     },
     user: () => {
       return firebase.auth().currentUser
